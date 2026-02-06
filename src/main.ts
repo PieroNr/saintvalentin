@@ -213,7 +213,7 @@ const renderHome = () => {
       <div class="valentine-photo-frame">
         <img class="valentine-photo" src="${photos[0]}" alt="Diaporama de souvenirs" />
       </div>
-      <h1 class="valentine-title">Veux-tu être ma valentine ?</h1>
+      <h1 class="valentine-title">Veux-tu être ma valentiiineeannnnnh ?</h1>
       <div class="valentine-actions">
         <button class="btn btn-yes" type="button">Oui</button>
         <button class="btn btn-no" type="button">Non</button>
