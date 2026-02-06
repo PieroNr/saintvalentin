@@ -21,6 +21,15 @@ const MIN_OFFSET_DELTA_PX = 6
 const YES_GIF_SRC = '/img/oui.gif'
 const NO_GIF_SRC = '/img/non.gif'
 
+const preloadImages = (sources: string[]) => {
+  sources.forEach((src) => {
+    const img = new Image()
+    img.src = src
+  })
+}
+
+preloadImages([YES_GIF_SRC, NO_GIF_SRC])
+
 const app = document.querySelector<HTMLDivElement>('#app')!
 let cleanupFns: Array<() => void> = []
 
@@ -250,7 +259,7 @@ const renderHome = () => {
 const renderYes = () => {
   app.innerHTML = `
     <main class="valentine valentine-screen">
-      <img class="valentine-gif" src="${YES_GIF_SRC}" alt="Oui" />
+      <img class="valentine-gif" src="${YES_GIF_SRC}" alt="Oui" loading="eager" decoding="async" />
       <h1 class="valentine-title">Merci JTMMMM &lt;3</h1>
     </main>
   `
@@ -259,7 +268,7 @@ const renderYes = () => {
 const renderNo = () => {
   app.innerHTML = `
     <main class="valentine valentine-screen">
-      <img class="valentine-gif" src="${NO_GIF_SRC}" alt="Non" />
+      <img class="valentine-gif" src="${NO_GIF_SRC}" alt="Non" loading="eager" decoding="async" />
       <div class="valentine-icon">&times;</div>
       <h1 class="valentine-title">Je refuse ton non, respire et réessaies</h1>
       <p class="valentine-countdown">Retour dans <span data-countdown>5</span>s</p>
